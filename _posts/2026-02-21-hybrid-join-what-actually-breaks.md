@@ -81,7 +81,8 @@ Hybrid identity does not forgive lifecycle mistakes.
 ## Diagnosing Hybrid Join Correctly
 
 Always start locally:
- - dsregcmd /status
+dsregcmd /status
+
 Check:
 
 - AzureAdJoined
