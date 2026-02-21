@@ -20,6 +20,17 @@ When something breaks, it rarely breaks loudly.
 
 It breaks silently.
 
+In one real-world scenario, a device was re-imaged and successfully domain joined.
+`dsregcmd /status` showed AzureAdJoined = YES.
+
+Yet the device was missing in Entra.
+
+Conditional Access policies behaved inconsistently, and Intune compliance never updated.
+
+The issue was not configuration.
+
+It was lifecycle drift.
+
 ---
 
 ## The Most Common Hybrid Join Failures
@@ -81,7 +92,7 @@ Hybrid identity does not forgive lifecycle mistakes.
 ## Diagnosing Hybrid Join Correctly
 
 Always start locally:
-dsregcmd /status
+`dsregcmd /status`
 
 Check:
 
@@ -155,15 +166,22 @@ This script returns structured output suitable for automation or fleet reporting
 
 ## Engineering Takeaways
 
-1. Hybrid join is identity architecture, not just configuration.
-2. Device lifecycle discipline matters.
-3. Object hygiene prevents cascading authentication problems.
-4. Automation should validate identity state regularly.
+Hybrid join is not a checkbox feature.
+It is identity architecture.
+
+Device lifecycle discipline is mandatory.
+Object hygiene is not optional.
+
+If hybrid join regularly requires `dsregcmd /leave` to function,
+the issue is not the command.
+
+The issue is systemic drift.
+
+Automation should validate hybrid identity state regularly —
+before authentication failures surface in production.
 
 Hybrid environments are not fragile because they are hybrid.
 
 They are fragile when lifecycle discipline is weak.
-
----
 
 Automation is not convenience — it is operational survival.
