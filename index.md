@@ -22,3 +22,9 @@ Real-world Microsoft hybrid infrastructure, identity, and automation engineering
 I document practical lessons from operating hybrid Microsoft environments — where Active Directory, Entra ID, endpoint management, and automation intersect.
 
 Automation is not convenience — it is operational survival.
+
+---
+
+## Toolkit
+
+[Enterprise Hybrid Toolkit](/toolkit)
