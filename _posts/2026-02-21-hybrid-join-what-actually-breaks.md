@@ -101,6 +101,48 @@ Never trust only one side of hybrid identity.
 
 ---
 
+## The Power of dsregcmd (and When to Use It)
+
+`dsregcmd /status` is not optional in hybrid troubleshooting.
+
+It is the first truth source.
+
+Key fields to verify:
+
+- `AzureAdJoined`
+- `DomainJoined`
+- `DeviceId`
+- `TenantId`
+- `WorkplaceJoined`
+
+If `AzureAdJoined` = YES but the device is missing in Entra:
+
+- Sync may be delayed
+- Device object may be stale
+- OU scoping may be incorrect
+
+If `AzureAdJoined` = NO but `DomainJoined` = YES:
+
+- GPO may not be applying
+- SCP may be misconfigured
+- Device may be blocked from outbound registration
+
+If identity is clearly broken: dsregcmd /leave
+
+Reboot.
+
+Then allow GPO to re-trigger hybrid join.
+
+Sometimes the cleanest fix is resetting the local registration state.
+
+But this should not be routine — repeated use signals architectural drift.
+
+---
+
+Hybrid join should not require heroics.
+
+If it does, lifecycle discipline needs attention.
+
 ## Engineering Takeaways
 
 1. Hybrid join is identity architecture, not just configuration.
