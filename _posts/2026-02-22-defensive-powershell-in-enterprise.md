@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Defensive PowerShell in Enterprise Environments"
-date: 2026-02-22
+date: 2026-02-21
 ---
 
 PowerShell scripts rarely fail in lab environments.
