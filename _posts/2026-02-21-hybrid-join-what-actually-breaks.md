@@ -143,6 +143,16 @@ Hybrid join should not require heroics.
 
 If it does, lifecycle discipline needs attention.
 
+---
+
+## Hybrid Join Diagnostic Script
+
+A basic structured wrapper for `dsregcmd /status` is available here:
+
+[Hybrid Join Diagnostic Script](https://github.com/jeromesuggs-tech/Hybrid-Enterprise-Toolkit/blob/main/Identity/Test-HybridJoinState.ps1)
+
+This script returns structured output suitable for automation or fleet reporting.
+
 ## Engineering Takeaways
 
 1. Hybrid join is identity architecture, not just configuration.
