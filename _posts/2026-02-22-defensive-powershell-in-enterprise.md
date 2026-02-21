@@ -58,12 +58,19 @@ function Convert-DMTFDateSafe {
         return $null
     }
 }
+```
 
 Silently crashing scripts do not scale.
 
 Graceful degradation does.
 
 ---
+
+## Toolkit Reference
+
+The helper function used above is also maintained in my toolkit repo:
+
+- [Convert-DMTFDateSafe.ps1](https://github.com/jeromesuggs-tech/Hybrid-Enterprise-Toolkit/blob/main/Utilities/Convert-DMTFDateSafe.ps1)
 
 ## Timeout Discipline
 
